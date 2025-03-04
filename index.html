@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE CERTAINTY OF THE THREE ANGEL’S MESSAGES</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 95%;
+            margin: 20px auto;
+			max-height: 95vh; /* Restrict table height to enable vertical scrolling */
+			overflow-y: auto; /* Enable vertical scrolling */
+			border: 1px solid #ccc;
+            position: relative;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+			cursor: pointer;
+            transition: outline 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .compare-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .compare-button:hover {
+            background-color: #0056b3;
+        }
+		.frozen-row {
+            position: absolute;
+            top: 0; /* Adjust dynamically in JS */
+            background-color: #e8f4ff; /* Highlight for frozen row */
+            z-index: 10;
+			cursor: grab;
+        }
+		.frozen-row:active {
+            cursor: grabbing;
+        }
+		.frozen-top {
+            top: 0;
+        }
+        .frozen-bottom {
+            bottom: 0;
+        }
+		.frozen-row-buttons {
+            margin-bottom: 10px;
+        }
+		.freeze-button {
+            padding: 5px 10px;
+            margin: 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+		.freeze-button:hover {
+            background-color: #0056b3;
+        }
+		td:hover {
+            outline: 3px solid #007bff;
+            transform: scale(1.02);
+        }
+		.red-text {
+			color: red;
+			font-weight: bold; /* make the text bold for emphasis */
+		}
+		.yellow-highlight-text {
+			background-color: yellow;
+		}
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            z-index: 1000;
+			max-width: 600px;
+			max-height: 85vh; /* Restrict popup height to 85% of the viewport */
+            overflow-y: auto;
+        }
+        .popup h3 {
+            margin: 0;
+        }
+        .popup-content {
+            margin: 20px 0;
+        }
+        .close-popup {
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="tableContainer">
+        <h1>THE CERTAINTY OF THE THREE ANGEL’S MESSAGES TABLE</h1>
+        <table id="comparisonTable">
+            <thead>
+                <tr>
+                    <th>Time of the End</th>
+                    <th>1AM</th>
+                    <th>2AM</th>
+                    <th>Midnight</th>
+                    <th>Midnight Cry</th>
+                    <th>Great Disappointment</th>
+                    <th>3AM</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Popup -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <h3>Details</h3>
+        <div class="popup-content" id="popupContent"></div>
+        <button class="close-popup" onclick="closePopup()">Close</button>
+    </div>
+	<script type="module">
+		import { closePopup } from "./threeAngels.mjs";
+		window.closePopup = closePopup;
+	</script>
+</body>
+</html>
