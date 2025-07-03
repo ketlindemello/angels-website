@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | The Three Angel’s Messages</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f8f9fa;
+    }
+
+    .page-header {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .header-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .menu {
+        position: absolute;
+        bottom: 30px; /* 👈 Pushes the menu down toward the bottom */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .menu-button {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #1a73e8;
+      border: 2px solid white;
+      border-radius: 6px;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .menu-button:hover {
+      background-color: #e3f2fd;
+      transform: scale(1.05);
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #1a73e8;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 30px;
+      background: #e3f2fd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      color: #333;
+    }
+
+    .contact-section a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+
+    .contact-section a:hover {
+      text-decoration: underline;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button[type="submit"] {
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0c5dc0;
+    }
+    .profile-box {
+        display: flex;
+        align-items: flex-start;
+        gap: 70px;
+        margin: 20px 0;
+    }
+
+    .profile-photo {
+        width: 20px;
+        height: 20px;
+        border-radius: 8px;
+        object-fit: cover;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="page-header">
+    <img src="banner.jpg" alt="Banner Image" class="header-image" />
+    <nav class="menu">
+      <a href="index.html" class="menu-button">Home</a>
+      <a href="about.html" class="menu-button">About</a>
+      <a href="timeline.html" class="menu-button">Timeline</a>
+      <a href="about.html#contact" class="menu-button">Contact</a>
+    </nav>
+  </header>
+
+  <!-- About Content -->
+  <div class="content">
+    <h1>About This Project</h1>
+    <p>
+      This project explores the prophetic significance and historical context of the Three Angel’s Messages as presented in Revelation 14. Through interactive tools and visual timelines, we aim to deepen understanding of their certainty and relevance for our time.
+    </p>
+    <p>
+      The table and timeline are designed to represent key events like the Midnight Cry, Great Disappointment, and the Advent movement, making it easier for users to explore relationships, dates, and theological implications.
+    </p>
+    <p>
+      We welcome those who are studying prophecy, history, and eschatology to engage, compare, and contribute to this growing study tool.
+    </p>
+  </div>
+
+  <!-- About the Author -->
+  <div class="content">
+    <h1>About The Author</h1>
+    <div class="profile-box">
+    <img src="author.jpg" alt="Project Leader" class="author-photo" />
+    <p>
+        <strong>John Doe</strong> is the project coordinator and researcher behind this timeline study.
+        He brings a passion for prophecy and historical theology, aiming to provide accessible tools for personal and group Bible study.
+    </p>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div id="contact" class="contact-section">
+    <h1>Contact Us</h1>
+    <p>If you have questions, feedback, or want to collaborate, feel free to reach out.</p>
+
+    <form action="mailto:info@threeangels.org" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <p style="margin-top: 20px;">
+      Or email us directly at <a href="mailto:info@threeangels.org">info@threeangels.org</a>
+    </p>
+  </div>
+</body>
+</html>

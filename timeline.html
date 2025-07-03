@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Timeline | The Three Angel’s Messages</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f8f9fa;
+    }
+
+    .page-header {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .header-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .menu {
+        position: absolute;
+        bottom: 30px; /* 👈 Pushes the menu down toward the bottom */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .menu-button {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #1a73e8;
+      border: 2px solid white;
+      border-radius: 6px;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .menu-button:hover {
+      background-color: #e3f2fd;
+      transform: scale(1.05);
+    }
+
+    .container {
+      width: 95%;
+      margin: 20px auto;
+      max-height: 95vh;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      background: white;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #1a73e8;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    ul {
+      line-height: 1.6;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: outline 0.2s ease-in-out, transform 0.2s ease-in-out;
+    }
+
+    th {
+      background-color: #f4f4f4;
+    }
+
+    td:hover {
+      outline: 3px solid #007bff;
+      transform: scale(1.02);
+    }
+
+    .compare-button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .compare-button:hover {
+      background-color: #0056b3;
+    }
+
+    .red-text {
+      color: red;
+      font-weight: bold;
+    }
+
+    .yellow-highlight-text {
+      background-color: yellow;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      z-index: 1000;
+      max-width: 600px;
+      max-height: 85vh;
+      overflow-y: auto;
+    }
+
+    .popup h3 {
+      margin: 0;
+    }
+
+    .popup-content {
+      margin: 20px 0;
+    }
+
+    .close-popup {
+      background: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Background Image and Menu -->
+  <header class="page-header">
+    <img src="banner.jpg" alt="Banner Image" class="header-image" />
+    <nav class="menu">
+      <a href="index.html" class="menu-button">Home</a>
+      <a href="about.html" class="menu-button">About</a>
+      <a href="timeline.html" class="menu-button">Timeline</a>
+      <a href="about.html#contact" class="menu-button">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Timeline Table -->
+  <div class="container" id="tableContainer">
+    <h1>THE CERTAINTY OF THE THREE ANGEL’S MESSAGES TABLE</h1>
+    <table id="comparisonTable">
+      <thead>
+        <tr>
+          <th>Time of the End</th>
+          <th>1AM</th>
+          <th>2AM</th>
+          <th>Midnight</th>
+          <th>Midnight Cry</th>
+          <th>Great Disappointment</th>
+          <th>3AM</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Rows will be dynamically added here -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Popup -->
+  <div class="overlay" id="overlay"></div>
+  <div class="popup" id="popup">
+    <h3>Details</h3>
+    <div class="popup-content" id="popupContent"></div>
+    <button class="close-popup" onclick="closePopup()">Close</button>
+  </div>
+
+  <script type="module">
+    import { closePopup } from "./threeAngels.mjs";
+    window.closePopup = closePopup;
+  </script>
+</body>
+</html>
